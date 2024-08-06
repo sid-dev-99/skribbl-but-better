@@ -1,5 +1,5 @@
 // define user interface here
-class User {
+export default class User {
 
     userId:number;
     userSocket:WebSocket;
@@ -13,15 +13,12 @@ constructor(userId:number,userSocket:WebSocket,score:number,isconected:boolean,u
 
     this.userId = userId;
     this.userSocket = userSocket;
-    this.score = score;
-    this.isconnected = isconnected;
+    this.score = 0;
+    this.isconnected = true;
     this.username = username;
-
-
-
-
-}
     
+}
+    u
 
 }
 
