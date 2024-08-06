@@ -18,7 +18,7 @@ constructor(userId:number,userSocket:WebSocket,score:number,isconected:boolean,u
     this.username = username;
     
 }
-    u
+    
 
 }
 
