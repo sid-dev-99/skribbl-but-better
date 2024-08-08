@@ -1,4 +1,4 @@
-import { MAX_PLAYERS } from '../../constants/config';
+import { MAX_PLAYERS } from '../constants/config';
 import User from './user';
 
 export class Room{

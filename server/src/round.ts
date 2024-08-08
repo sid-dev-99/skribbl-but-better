@@ -1,4 +1,4 @@
-import config from "../../constants/config";
+import config from "../constants/config";
 import User from "./user";
 import fs from 'fs';
 

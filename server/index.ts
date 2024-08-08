@@ -1,6 +1,6 @@
 import express from 'express';
 import Room from './src/room'
-import config from '../constants/config';
+import config from './constants/config';
 
 //socket here
 
