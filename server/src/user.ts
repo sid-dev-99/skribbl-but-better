@@ -10,7 +10,6 @@ export default class User {
 
 constructor(userId:number,userSocket:WebSocket,score:number,isconected:boolean,username:string) {
 
-
     this.userId = userId;
     this.userSocket = userSocket;
     this.score = 0;
@@ -18,8 +17,6 @@ constructor(userId:number,userSocket:WebSocket,score:number,isconected:boolean,u
     this.username = username;
     
 }
-    
-
 }
 
 

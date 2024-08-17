@@ -27,10 +27,23 @@ addUser():void{
 }
 
 
-removeUser():void{}
+removeUser(user:User):void{
+    this.users = this.users.filter(x => x.userId !== user.userId)
+    this.broadcast('removeUser',{})
+}
 
 
-// remove user
+broadcast(msg:string,payload:{},excludedUser:User | undefined = undefined):void{
+    this.users.forEach((user)=>{  
+        if(!excludedUser || (user.userId !== excludedUser.userId)){
+        user.socket.emit(msg,payload)
+        }
+    }
+)};
+
+//broadcastChatmsg(msg):void{}
+
+
 
 
 }
