@@ -1,5 +1,7 @@
-import { MAX_PLAYERS } from '../constants/config';
+
+import MAX_PLAYERS from './config';
 import User from './user';
+
 
 export class Room{
     
@@ -7,29 +9,26 @@ export class Room{
     drawingState:any[];
     activeUserIdx:number;
     gameOn:boolean;
-    round:number | null;
+        round:number | null;
 
 
+    isFull():boolean{
+        return this.users.length === MAX_PLAYERS.MAX_PLAYERS;
+    }
 
+    addUser(user:User):void{
 
-isFull():boolean{
-    return this.users.length === MAX_PLAYERS
-}
-
-addUser():void{
-
-    let user = this.users.pop()
-    //add user
-
-
-
-
-}
+        if(this.users.length > MAX_PLAYERS.MAX_PLAYERS){
+            throw new Error('Players exceeded');
+        }
+        this.users.push(user)
+        this.broadcast('userAdded',user.userInfo())
+    }
 
 
 removeUser(user:User):void{
     this.users = this.users.filter(x => x.userId !== user.userId)
-    this.broadcast('removeUser',{})
+    this.broadcast('removeUser',user.userInfo)
 }
 
 
@@ -43,7 +42,13 @@ broadcast(msg:string,payload:{},excludedUser:User | undefined = undefined):void{
 
 //broadcastChatmsg(msg):void{}
 
+correctGuess():void{
 
+    if() //user guess over users
 
 
 }
+
+
+}
+

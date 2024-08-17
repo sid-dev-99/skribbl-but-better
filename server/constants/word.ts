@@ -1,4 +1,4 @@
-[
+const word:string[] = [
 "kite",
 "green",
 "night",
@@ -51,3 +51,5 @@
 "rain"
 
 ]
+
+export default words;

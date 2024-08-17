@@ -1,5 +1,31 @@
-import config from "../constants/config";
+import words from '../constants/word';
 import User from "./user";
-import fs from 'fs';
 
-const words:string[] = JSON.parse(fs.readFileSync()); //  to read the word 
+
+
+class Round{
+
+    word:string;
+    launchTime:number;
+    leftTime:number;
+    activeUser:User;
+    currentUserscore:number;
+    kickVotes:number;
+
+    constructor(){
+        this.word = this.generateRandomword();
+        this.launchTime = Date.now();
+        this.leftTime =  this.word.length * 5000
+        this.currentUserscore = 0;
+    }
+
+
+    generateRandomword(){
+        const randomIndex = Math.floor(Math.random()*words.length);
+        return words[randomIndex]
+    }
+
+
+
+
+}
